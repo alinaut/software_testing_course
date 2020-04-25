@@ -49,14 +49,14 @@ class MatrixTest {
     public void TestAdditionWithException() throws Exception {
         double [][] first = {{1, 2}, {3, 4}};
         double [][] second = {{1, 2}, {3, 4}, {5, 6}};
-        assertThrows(Exception.class, () -> mtr.add(first, second));
+        assertThrows(Exception.class, () -> mtr.addition(first, second));
     }
 
     @Test()
     public void TestAdditionWithException2() throws Exception {
         double [][] first = {{1, 2, 3}, {3, 4, 5}};
         double [][] second = {{1, 2}, {3, 4},};
-        assertThrows(Exception.class, () -> mtr.add(first, second));
+        assertThrows(Exception.class, () -> mtr.addition(first, second));
     }
 
     @Test
