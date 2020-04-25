@@ -32,9 +32,8 @@ class MatrixTest {
         double [][] first = {{1, 2}, {3, 4}};
         double [][] second = {{1, 2}, {3, 4}};
         double [][] res = {{7, 10}, {15, 22}};
-        Matrix a = new Matrix();
-        double [][] actual_res = a.multiply(first, second);
-        Assert.assertArrayEquals(res, actual_res);
+        double [][] actual_res = mtr.multiply(first, second);
+        assertArrayEquals(res, actual_res);
     }
 
     @Test
@@ -42,27 +41,22 @@ class MatrixTest {
         double [][] first = {{1, 2}, {3, 4}};
         double [][] second = {{1, 2}, {3, 4}};
         double [][] res = {{2, 4}, {6, 8}};
-        Matrix a = new Matrix();
-        double [][] actual_res = a.addition(first, second);
-        Assert.assertArrayEquals(res, actual_res);
+        double [][] actual_res = mtr.addition(first, second);
+        assertArrayEquals(res, actual_res);
     }
 
-    @Test(expected = Exception.class)
+    @Test()
     public void TestAdditionWithException() throws Exception {
         double [][] first = {{1, 2}, {3, 4}};
         double [][] second = {{1, 2}, {3, 4}, {5, 6}};
-        double [][] res = {{2, 4}, {6, 8}};
-        Matrix a = new Matrix();
-        double [][] actual_res = a.addition(first, second);
+        assertThrows(Exception.class, () -> mtr.add(first, second));
     }
 
-    @Test(expected = Exception.class)
+    @Test()
     public void TestAdditionWithException2() throws Exception {
         double [][] first = {{1, 2, 3}, {3, 4, 5}};
         double [][] second = {{1, 2}, {3, 4},};
-        double [][] res = {{2, 4}, {6, 8}};
-        Matrix a = new Matrix();
-        double [][] actual_res = a.addition(first, second);
+        assertThrows(Exception.class, () -> mtr.add(first, second));
     }
 
     @Test
@@ -70,27 +64,22 @@ class MatrixTest {
         double [][] first = {{1, 2}, {3, 4}};
         double [][] second = {{1, 2}, {3, 4}};
         double [][] res = {{0, 0}, {0, 0}};
-        Matrix a = new Matrix();
-        double [][] actual_res = a.substraction(first, second);
-        Assert.assertArrayEquals(res, actual_res);
+        double [][] actual_res = mtr.substraction(first, second);
+        assertArrayEquals(res, actual_res);
     }
 
-    @Test(expected = Exception.class)
+    @Test()
     public void TestSubstractionWithException() throws Exception {
         double [][] first = {{1, 2}, {3, 4}};
         double [][] second = {{1, 2}, {3, 4}, {5, 6}};
-        double [][] res = {{2, 4}, {6, 8}};
-        Matrix a = new Matrix();
-        double [][] actual_res = a.substraction(first, second);
+        assertThrows(Exception.class, () -> mtr.substraction(first, second));
     }
 
-    @Test(expected = Exception.class)
+    @Test()
     public void TestSubstractionWithException2() throws Exception {
         double [][] first = {{1, 2, 3}, {3, 4, 5}};
         double [][] second = {{1, 2}, {3, 4},};
-        double [][] res = {{2, 4}, {6, 8}};
-        Matrix a = new Matrix();
-        double [][] actual_res = a.substraction(first, second);
+        assertThrows(Exception.class, () -> mtr.substraction(first, second));
     }
 
     @Test
@@ -99,7 +88,7 @@ class MatrixTest {
         int val = 0;
         Matrix a = new Matrix();
         double [][] actual_res = a.addValue(first, val);
-        Assert.assertArrayEquals(first, actual_res);
+        assertArrayEquals(first, actual_res);
     }
 
     @Test
@@ -109,7 +98,7 @@ class MatrixTest {
         double [][] res = {{11, 12}, {13, 14}};
         Matrix a = new Matrix();
         double [][] actual_res = a.addValue(first, val);
-        Assert.assertArrayEquals(res, actual_res);
+        assertArrayEquals(res, actual_res);
     }
 
     @Test
