@@ -33,33 +33,31 @@ public class Matrix {
                 res[i][j] = first[i][j] + value;
         return res;
     }
-
     public static double[][] readMatrixFromFile(String file) throws Exception {
         FileReader fileReader = new FileReader("./src/main/java/resources/" + file);
         Scanner scanner = new Scanner(fileReader);
 
         List<Double> matrix = new ArrayList<>();
 
-        int rows = 0, cols = 0;
+        int row = 0, col = 0;
         while(scanner.hasNextLine()) {
-            cols = 0;
+            col = 0;
             Scanner rowScanner = new Scanner(scanner.nextLine());
             while(rowScanner.hasNextDouble()) {
                 matrix.add(rowScanner.nextDouble());
-                cols++;
+                col++;
             }
-            rows++;
+            row++;
         }
-        double[][] result = new double[rows][cols];
-        for (int r = 0; r < rows; r++) {
-            for (int c = 0; c < cols; c++) {
-                result[r][c] = matrix.get(r * c + c);
+        double[][] result = new double[row][col];
+        for (int r = 0; r < row; r++) {
+            for (int c = 0; c < col; c++) {
+                result[r][c] = matrix.get(r * row + c);
             }
         }
         fileReader.close();
         return result;
     }
-
     public static double[][] multiply(double[][] firstMatrix, double[][] secondMatrix) {
         double[][] result = new double[firstMatrix.length][secondMatrix[0].length];
         for (int row = 0; row < result.length; row++) {
