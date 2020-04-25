@@ -52,7 +52,7 @@ public class Matrix {
         double[][] result = new double[row][col];
         for (int r = 0; r < row; r++) {
             for (int c = 0; c < col; c++) {
-                result[r][c] = matrix.get(r * row + c);
+                result[r][c] = matrix.get(r * col + c);
             }
         }
         fileReader.close();
