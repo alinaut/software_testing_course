@@ -111,7 +111,7 @@ class MatrixTest {
     @ValueSource(strings = {"matrix1", "matrix2", "matrix3"})
     @Test
     public void TestReadMatrixFromFileWithNoThrow(String candidate) throws Exception {
-        assertDoesNotThrow(() -> mtr.readMatrixFromFile(candidate));
+        assertDoesNotThrow(() -> Matrix.readMatrixFromFile(candidate));
     }
 
 }
