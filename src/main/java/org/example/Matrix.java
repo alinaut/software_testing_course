@@ -74,7 +74,6 @@ public class Matrix {
         }
         return cell;
     }
-
     public static void print(double[][] matrix) {
         int rows=matrix.length;
         int cols=matrix[0].length;

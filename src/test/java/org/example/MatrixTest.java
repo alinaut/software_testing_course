@@ -113,4 +113,15 @@ class MatrixTest {
         assertDoesNotThrow(() -> Matrix.readMatrixFromFile(candidate));
     }
 
+    @ParameterizedTest
+    @CsvSource({"3","4","5"})
+    public void TestAddValueToZeroMatrix(double a) {
+        double[][] zeros = {{0, 0},{0, 0}};
+        double[][] actual = new double[zeros.length][zeros[0].length];
+        for (int i = 0; i < zeros.length; i++)
+            for(int j = 0; j < zeros[0].length; j++)
+                actual[i][j] = a;
+        double[][] exp = mtr.addValue(zeros, a);
+        assertArrayEquals(exp, actual);
+    }
 }
